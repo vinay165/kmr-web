@@ -1,0 +1,12 @@
+$path: '~stylesheets-root' !global;
+$icon-path: $path + '/icons/';
+
+$icon-menu: 'menu.svg';
+
+@mixin icon($name, $width, $height){
+  display: inline-block;
+  background: url($icon-path + $name) no-repeat; 
+  background-size: $width $height;
+  width: $width;
+  height: $height; 
+}
