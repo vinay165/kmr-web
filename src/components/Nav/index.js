@@ -13,7 +13,7 @@ const navConfig = [
   },
   {
     displayName: "Admin",
-    path: "/login"
+    path: "/admin"
   }
 ];
 
