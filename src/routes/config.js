@@ -6,7 +6,7 @@ const Checkout = lazy(() => import('../pages/checkout'));
 const AboutUs = lazy(() => import('../pages/aboutUs'));
 const Error = lazy(() => import('../pages/error'));
 
-export const routes = [
+const routes = [
   {
     path: '/',
     component: Home,
@@ -28,16 +28,16 @@ export const routes = [
     displayName: 'AboutUs'
   },
   {
+    path: '/admin',
+    component: Admin,
+    displayName: 'Admin',
+    authProtected: true
+  },
+  {
     path: '*',
     component: Error,
     displayName: 'Error'
   }
 ];
 
-export const privateRoutes = [
-  {
-    path: '/admin',
-    component: Admin,
-    displayName: 'Admin'
-  }
-];
+export default routes;
