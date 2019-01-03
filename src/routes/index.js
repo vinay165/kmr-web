@@ -1,7 +1,7 @@
 import React, { Suspense, Fragment } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Loader from '../components/Loader';
-import { auth } from '../services/auth';
+import auth from '../services/auth';
 import { routes, privateRoutes } from './config';
 
 const LazyComponent = (Component) => {
@@ -38,10 +38,10 @@ const ConfigureRoutes = () => {
       <Suspense fallback={<Loader />}>
         <Switch>
           {
-            routes && routes.map(route => {
+            privateRoutes && privateRoutes.map(route => {
               const { path, component, displayName, rest } = route;
               return (
-                <Route
+                <PrivateRoute
                   exact
                   {...rest}
                   key={displayName}
@@ -51,10 +51,10 @@ const ConfigureRoutes = () => {
             })
           }
           {
-            privateRoutes && privateRoutes.map(route => {
+            routes && routes.map(route => {
               const { path, component, displayName, rest } = route;
               return (
-                <PrivateRoute
+                <Route
                   exact
                   {...rest}
                   key={displayName}

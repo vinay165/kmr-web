@@ -25,7 +25,7 @@ const Login = (props) => {
     }
   }
   
-  const { from } =  props.location.state || { from: { pathname: "/" }};
+  const { from } =  props.location && props.location.state || { from: { pathname: "/" }};
   if(redirectToReferrer) {
     return <Redirect to={from} />;
   }
