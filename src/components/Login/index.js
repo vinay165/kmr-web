@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Input from '../Input';
 import Button from '../Button';
+import auth from '../../services/auth';
 import './index.scss';
 
-const Login = () => {
+const Login = (props) => {
   const [adminName, setAdminName] = useState('');
   const [password, setPassword] = useState('');
+  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
   const handleAdminName = (val) => {
     setAdminName(val);
@@ -15,12 +18,17 @@ const Login = () => {
   } 
 
   const handleSubmit = () => {
-    console.log(adminName, password)
+    // Make Login Service call
     if(adminName === 'admin' && password === 'admin' ){
-      console.log('success');
+      setRedirectToReferrer(true);
+      auth.authenticate() // On Successfull Login
     }
   }
   
+  const { from } =  props.location && props.location.state || { from: { pathname: "/" }};
+  if(redirectToReferrer) {
+    return <Redirect to={from} />;
+  }
   return (
     <div className="login">
       <span>Admin Name</span>

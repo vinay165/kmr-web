@@ -7,36 +7,37 @@ const AboutUs = lazy(() => import('../pages/aboutUs'));
 const Error = lazy(() => import('../pages/error'));
 
 const routes = [
-    {
-        path: '/',
-        component: Home,
-        displayName: 'Home'
-    },
-    {
-        path: '/admin',
-        component: Admin,
-        displayName: 'Admin'
-    },
-    {
-        path: '/login',
-        component: Login,
-        displayName: 'Login'
-    },
-    {
-        path: '/checkout',
-        component: Checkout,
-        displayName: 'Checkout'
-    },
-    {
-        path: '/aboutUs',
-        component: AboutUs,
-        displayName: 'AboutUs'
-    },
-    {
-        path: '*',
-        component: Error,
-        displayName: 'Error'
-    }
+  {
+    path: '/',
+    component: Home,
+    displayName: 'Home'
+  },
+  {
+    path: '/login',
+    component: Login,
+    displayName: 'Login'
+  },
+  {
+    path: '/checkout',
+    component: Checkout,
+    displayName: 'Checkout'
+  },
+  {
+    path: '/aboutUs',
+    component: AboutUs,
+    displayName: 'AboutUs'
+  },
+  {
+    path: '/admin',
+    component: Admin,
+    displayName: 'Admin',
+    authProtected: true
+  },
+  {
+    path: '*',
+    component: Error,
+    displayName: 'Error'
+  }
 ];
 
 export default routes;
