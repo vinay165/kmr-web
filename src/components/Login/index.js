@@ -38,7 +38,8 @@ const Login = (props) => {
       <Input 
         handleChange={handlePassword} />
       <Button 
-        value="Log In"
+        label="Log In"
+        customClass="button-primary-large"
         isDisabled={adminName === '' || password === ''}
         handleClick={handleSubmit} />
     </div>

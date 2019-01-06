@@ -1,0 +1,72 @@
+.button{
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+  height: 28px;
+  padding: 6px;
+  outline: none;
+  cursor: pointer;
+
+  &__primary{
+    background-color: steelblue;
+    color: white;
+    border: 1px solid steelblue;
+
+    &:hover{
+      background-color: white;
+      color: steelblue;  
+    }
+
+    &--large{
+      height: 32px;
+      min-width: 160px;
+    }
+  }
+
+  &__secondary{
+    background-color: white;
+    color: steelblue;
+    border: 1px solid steelblue;
+
+    &:hover{
+      background-color: steelblue;
+      color: white;
+    }
+
+    &--large{
+      height: 32px;
+      min-width: 160px;
+    }
+  }
+
+  &__positive{
+    background-color: seagreen;
+    color: white;
+    border: 1px solid seagreen;
+
+    &:hover{
+      background-color: white;
+      color: seagreen;
+    }
+  }
+
+  &__negative{
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+
+    &:hover{
+      background-color: white;
+      color: orangered;
+    }
+  }
+
+  &:disabled{
+    background-color: white;
+    color: grey;
+    border: 1px solid lightgrey;
+    cursor: default;
+  }
+}

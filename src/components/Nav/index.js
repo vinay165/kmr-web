@@ -1,5 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import auth from '../../services/auth';
+import Conditional from '../Conditional';
+import Button from '../Button';
 import './index.scss';
 
 const navConfig = [
@@ -14,30 +17,51 @@ const navConfig = [
   {
     displayName: "Admin",
     path: "/admin"
+  }, 
+  {
+    displayName: "Orders",
+    path: "/orders",
+    authProtected: true
   }
 ];
 
-const Nav = ({handleCloseModal}) => {
+const Nav = ({handleCloseModal, history}) => {
   const handleNavModalClose = () => {
     handleCloseModal ? handleCloseModal() : () => {}
+  }
+
+  const handleLogOut = () => {
+    auth.signout();
+    history.push("/");
   }
 
   return (
     <ul className="nav">
       {
         navConfig.map(navInfo => {
-          const { path, displayName } = navInfo;
-          return (
-            <li className="nav__item" key={displayName} onClick={handleNavModalClose}>
-              <NavLink to={path} activeClassName="header__nav-item--active">
-                {displayName}
-              </NavLink>
-            </li>
-          )
+          const { path, displayName, authProtected } = navInfo;
+          if(authProtected && auth.isAuthenticated || !authProtected){
+            return (
+              <li className="nav__item" key={displayName} onClick={handleNavModalClose}>
+                <NavLink to={path} activeClassName="header__nav-item--active">
+                  {displayName}
+                </NavLink>
+              </li>
+            )
+          }
+          
         })
       }
+      <Conditional condition={auth.isAuthenticated}>
+        <li className="nav__item-logout">
+          <Button 
+            label="Log Out" 
+            customClass="button-secondary"
+            handleClick={handleLogOut} />
+        </li>
+      </Conditional>
     </ul>
   )
 }
 
-export default Nav;
+export default withRouter(Nav);
