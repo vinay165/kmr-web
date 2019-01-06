@@ -7,7 +7,20 @@ import './stylesheets/index.scss';
 import { globalState } from './store';
 
 globalState.setInitialState = { 
-  products: ['Product 1', 'Product 2']
+  products: [
+    {
+      imgSrc: './src/stylesheets/images/organicgroundnutoil.png',
+      name: 'Organic Groundnut Oil',
+      description: '',
+      pricePerQuantity: 'Rs 330.00 / Litre'
+    },
+    {
+      imgSrc: './src/stylesheets/images/organicgroundnutoil.png',
+      name: 'Organic Sesame Oil',
+      description: '',
+      pricePerQuantity: 'Rs 500.00 / Litre'
+    }
+  ]
 };
 
 const AppBootstrap = () => (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import Input from '../Input';
 import Button from '../Button';
 import auth from '../../services/auth';
@@ -46,4 +46,4 @@ const Login = (props) => {
   )
 }
 
-export default Login;
+export default withRouter(Login);
