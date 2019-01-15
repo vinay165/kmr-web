@@ -1,11 +1,10 @@
 import React from 'react';
-import {useReducer} from '../../store';
+import { connect } from 'react-redux';
+import { productsSelector } from '../../selectors';
 import ProductCard from '../../components/ProductCard';
 import './index.scss';
 
-const Home = () => {
-  const [state] = useReducer();
-  const {products=[]} = state;
+const Home = ({ products }) => {
 
   const handlePurchase = () => {
 
@@ -30,4 +29,8 @@ const Home = () => {
   )
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+  products: productsSelector(state)
+})
+
+export default connect(mapStateToProps)(Home);

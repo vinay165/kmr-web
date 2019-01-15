@@ -1,14 +1,19 @@
 .app{
   height: 100vh;
   display: grid;
-  grid-template-rows: 50px auto 100px;
+  grid-template-rows: 50px auto auto 100px;
   grid-template-areas: "header"
+                      "banner"
                       "main"
                       "footer";
 }
 
 .header{
   grid-area: header;
+}
+
+.banner{
+  grid-area: banner;
 }
 
 .main{

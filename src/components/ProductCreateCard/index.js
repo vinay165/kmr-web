@@ -1,13 +1,12 @@
 import React, {useState} from "react";
-import { useReducer } from '../../store';
+import { connect } from 'react-redux';
+import { productsSelector } from '../../selectors';
+import { updateProducts } from '../../actions';
 // import Input from '../Input';
 import Button from '../Button';
 import "./index.scss";
 
-const ProductCreateCard = ({ imgSrc, name, actionLabel, actionBtnClass }) => {
-  const [state, dispatch] = useReducer();
-  const { products } = state;
-
+const ProductCreateCard = ({ actionLabel, actionBtnClass, products, onUpdatedProducts }) => {
   const [productName, setProductName] = useState('');
   const [productDescription, setProductDescription] = useState('');
   const [productPrice, setProductPrice] = useState('');
@@ -20,7 +19,7 @@ const ProductCreateCard = ({ imgSrc, name, actionLabel, actionBtnClass }) => {
       pricePerQuantity: productPrice
     };
     const updatedProducts = [...products, product];
-    dispatch({products: updatedProducts});
+    onUpdatedProducts({products: updatedProducts});
 
     setProductName('');
     setProductDescription('');
@@ -64,4 +63,12 @@ const ProductCreateCard = ({ imgSrc, name, actionLabel, actionBtnClass }) => {
   )
 }
 
-export default ProductCreateCard;
+const mapStateToProps = (state) => ({
+  products: productsSelector(state)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  onUpdatedProducts: (data) => dispatch(updateProducts(data))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCreateCard);

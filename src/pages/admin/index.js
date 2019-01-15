@@ -1,16 +1,15 @@
 import React from 'react';
-import { useReducer } from '../../store';
+import { connect } from 'react-redux';
+import { productsSelector } from '../../selectors';
+import { updateProducts } from '../../actions';
 import ProductCard from '../../components/ProductCard';
 import ProductCreateCard from '../../components/ProductCreateCard';
 import './index.scss';
 
-const Admin = () => {
-  const [state, dispatch] = useReducer();
-  const { products } = state;
-
+const Admin = ({products, onUpdatedProducts}) => {
   const handleProductDelete = (product) => {
     const filteredProducts = products.filter(item => item.name !== product);
-    dispatch({ products: filteredProducts });
+    onUpdatedProducts({ products: filteredProducts });
   }
 
   return (
@@ -37,4 +36,12 @@ const Admin = () => {
   )
 }
 
-export default Admin;
+const mapStateToProps = (state) => ({
+  products: productsSelector(state)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  onUpdatedProducts: (data) => dispatch(updateProducts(data))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Admin);
