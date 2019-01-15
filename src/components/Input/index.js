@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.scss';
 
-const Input = ({handleChange, customClass}) => {
+const Input = ({value: initialValue, handleChange, customClass, ...rest}) => {
   const [value, setValue] = useState('');
   const handleValueChange = (e) => {
     const { value } = e.target;
@@ -10,7 +10,8 @@ const Input = ({handleChange, customClass}) => {
   }
   return (
     <input 
-    value={value}
+    {...rest}
+    value={initialValue || value}
     className={`input ${customClass}`}
     onChange={handleValueChange} />
   )

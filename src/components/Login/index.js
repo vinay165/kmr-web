@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import Input from '../Input';
 import Button from '../Button';
 import auth from '../../services/auth';
@@ -38,11 +38,12 @@ const Login = (props) => {
       <Input 
         handleChange={handlePassword} />
       <Button 
-        value="Log In"
+        label="Log In"
+        customClass="button-primary-large"
         isDisabled={adminName === '' || password === ''}
         handleClick={handleSubmit} />
     </div>
   )
 }
 
-export default Login;
+export default withRouter(Login);

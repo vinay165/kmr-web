@@ -1,6 +1,7 @@
 import { lazy } from "react";
 const Home = lazy(() => import('../pages/home'));
 const Admin = lazy(() => import('../pages/admin'));
+const Orders = lazy(() => import('../pages/orders'));
 const Login = lazy(() => import('../pages/login'));
 const Checkout = lazy(() => import('../pages/checkout'));
 const AboutUs = lazy(() => import('../pages/aboutUs'));
@@ -31,6 +32,12 @@ const routes = [
     path: '/admin',
     component: Admin,
     displayName: 'Admin',
+    authProtected: true
+  },
+  {
+    path: '/orders',
+    component: Orders,
+    displayName: 'Orders',
     authProtected: true
   },
   {
