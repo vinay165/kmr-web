@@ -9,11 +9,11 @@ const themes = {
   'button-positive': 'button__positive',
   'button-negative': 'button__negative',
 }
-const Button = ({children, label, handleClick, customClass, isDisabled}) => {
+const Button = ({children, label, handleClick, customClass, isDisabled, className}) => {
 
   return (
     <button 
-      className={`button ${themes[customClass]}`}
+      className={`button ${themes[customClass]} ${className}`}
       disabled={isDisabled}
       onClick={handleClick} >
       {children || label}

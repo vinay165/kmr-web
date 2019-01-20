@@ -4,7 +4,7 @@ import './index.scss';
 const Banner = ({bannerMessage}) => {
     return(
         <div className="banner">
-          {bannerMessage}
+          <span className="banner__message">{bannerMessage}</span>
         </div>
     )
 }

@@ -9,10 +9,10 @@ export const appDataReducer = (state={}, action) => {
   }
 }
 
-export const pageDataReducer = (state={}, action) => {
+export const appContextReducer = (state={}, action) => {
   switch(action.type){
-    // case actionTypes.UPDATE_PRODUCTS:
-    //   return {...state, ...action.data};
+    case actionTypes.UPDATE_CART:
+      return {...state, ...action.data};
     default:
       return state;
   }
@@ -20,7 +20,7 @@ export const pageDataReducer = (state={}, action) => {
 
 const reducers = {
   appData: appDataReducer,
-  pageData: pageDataReducer
+  appContext: appContextReducer
 }
 
 export default reducers;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import cn from 'classnames';
 import './index.scss';
 
 const Input = ({value: initialValue, handleChange, customClass, ...rest}) => {
@@ -10,10 +11,10 @@ const Input = ({value: initialValue, handleChange, customClass, ...rest}) => {
   }
   return (
     <input 
-    {...rest}
-    value={initialValue || value}
-    className={`input ${customClass}`}
-    onChange={handleValueChange} />
+      {...rest}
+      value={initialValue || value}
+      className={cn('input', customClass)}
+      onChange={handleValueChange} />
   )
 }
 

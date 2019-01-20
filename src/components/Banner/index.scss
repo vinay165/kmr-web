@@ -1,5 +1,45 @@
 .banner{
-  background: grey;
+  height: 36px;
+  background: lightseagreen;
+  padding: 9px 0px;
   color: white;
-  
+  overflow: hidden;
+  position: relative;
+
+  &__message{
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%); 	
+    
+    -moz-animation: scrolling-ticker 25s linear infinite;
+    -webkit-animation: scrolling-ticker 25s linear infinite;
+    animation: scrolling-ticker 25s linear infinite;
+  }
 }
+
+@-moz-keyframes scrolling-ticker {
+  0%   { -moz-transform: translateX(100%); }
+  100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scrolling-ticker {
+  0%   { -webkit-transform: translateX(100%); }
+  100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scrolling-ticker {
+  0%   { 
+    -moz-transform: translateX(100%); /* Browser bug fix */
+    -webkit-transform: translateX(100%); /* Browser bug fix */
+    transform: translateX(100%); 		
+  }
+  100% { 
+    -moz-transform: translateX(-100%); /* Browser bug fix */
+    -webkit-transform: translateX(-100%); /* Browser bug fix */
+    transform: translateX(-100%); 
+  }
+ }

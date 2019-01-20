@@ -1,10 +1,19 @@
 .login{
   display: grid;
   grid-template-columns: 50% 50%;
-  width: 200px;
-  justify-content: center;
-  align-content: center;
+  /* justify-content: center; */
+  /* align-content: center; */
+  align-items: center;
+  width: 300px;
+  height: 153px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  border: 2px solid lightseagreen;
+  border-radius: 10px;
 
-
-
+  &__cta{
+    grid-column: 1/3;
+    justify-self: center;
+  }
 }

@@ -10,18 +10,23 @@ const initialState = {
         imgSrc: './src/stylesheets/images/organicgroundnutoil.png',
         name: 'Organic Groundnut Oil',
         description: '',
-        pricePerQuantity: 'Rs 330.00 / Litre'
+        price: '330.00',
+        minQuantity: 3,
+        metrix: 'Litre'
       },
       {
         imgSrc: './src/stylesheets/images/organicgroundnutoil.png',
         name: 'Organic Sesame Oil',
         description: '',
-        pricePerQuantity: 'Rs 500.00 / Litre'
+        price: '500.00',
+        minQuantity: 1,
+        maxQuantity: 100,
+        metrix: 'Litre'
       }
     ],
-    bannerMessage: "We support Only Cash On Delivery and wil be coming soon with Online Payments. Apologize for any inconvenience."
+    bannerMessage: "We currently support Cash On Delivery Only. Will be coming soon with Online Payments. Apologize for any inconvenience."
   },
-  pageData: {}
+  appContext: {}
 };
 
 const getStore = () => {

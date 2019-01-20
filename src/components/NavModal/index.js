@@ -5,7 +5,7 @@ import './index.scss';
 
 const NavModal = ({open, handleNavClose}) => {
   return (
-    <Modal open={open} handleCloseModal={handleNavClose} >
+    <Modal open={open} handleCloseModal={handleNavClose} customClass="modal--right" >
       <div className="nav-modal">
         <Nav handleCloseModal={handleNavClose} />
       </div>

@@ -1,3 +1,4 @@
 export default {
   UPDATE_PRODUCTS: 'UPDATE_PRODUCTS',
+  UPDATE_CART: 'UPDATE_CART'
 } 

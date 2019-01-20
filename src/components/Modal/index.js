@@ -4,11 +4,11 @@ import Conditional from '../Conditional';
 import ModalPortal from './ModalPortal';
 import './index.scss';
 
-const Modal = ({children, open, handleCloseModal}) => {
+const Modal = ({children, open, handleCloseModal, customClass}) => {
   return(
     <Conditional condition={open}>
       <ModalPortal>
-        <div className="modal">
+        <div className={`modal ${customClass}`}>
           <span className="icon-close" onClick={handleCloseModal} />
           {children}
         </div>
