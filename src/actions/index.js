@@ -17,6 +17,6 @@ export const updateCart = (data) => {
 export const updateOrder = (data) => {
   return {
     type: actionTypes.UPDATE_ORDER,
-    data: {'order': data}
+    data: {'orders': data}
   }
 }

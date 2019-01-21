@@ -32,7 +32,7 @@ const initialState = {
     //     contact: "999999999",
     //     email: "vinayreddy165@gmail.com",
     //     addressLine1: "Bommakal",
-    //     addressLine2: "",
+    //     addressLine2: "Bomm",
     //     addressLine3: "Karimnagar, Telangana",
     //     cart:[{
     //       imgSrc: "./src/stylesheets/images/organicgroundnutoil.png",

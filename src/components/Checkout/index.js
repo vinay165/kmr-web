@@ -42,7 +42,7 @@ const Checkout = ({ cart, goBack, onUpdateCart, onUpdateOrder, orders }) => {
   return (
     <Conditional condition={confirm}>
       <div className="confirmation">
-        <div>Your order has been successfully placed. </div>
+        <div>Your order has been placed successfully. </div>
         <div>You will recieve an Email confirmation shortly. </div>
         <div>Thank you and Visit again. </div>
       </div>
