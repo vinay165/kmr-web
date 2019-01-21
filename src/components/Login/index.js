@@ -36,10 +36,12 @@ const Login = (props) => {
         handleChange={handleAdminName} />
       <span>Password</span>
       <Input 
+        type="password"
         handleChange={handlePassword} />
       <Button 
         label="Log In"
         customClass="button-primary-large"
+        className="login__cta"
         isDisabled={adminName === '' || password === ''}
         handleClick={handleSubmit} />
     </div>

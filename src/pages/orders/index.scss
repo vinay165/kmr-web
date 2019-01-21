@@ -1,0 +1,46 @@
+.orders{
+
+  &__heading{
+    padding: 15px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    max-width: 968px;
+  }
+}
+
+.order{
+  margin: 0 15px;
+  padding: 20px 0;
+  border-bottom: 2px solid lightseagreen;
+
+  &__info{
+    display: grid;
+    width: 300px;
+    grid-template-columns: 35% 65%;
+    grid-gap: 5px;
+  }
+
+  &__addressLine2, &__addressLine3{
+    grid-column: 2/3;
+  }
+  
+  &__item{
+    margin: 15px 50px;
+  }
+
+  &__total{
+    margin: 0 50px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &:last{
+    border-bottom: none;
+  }
+}

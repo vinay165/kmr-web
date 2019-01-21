@@ -4,7 +4,7 @@ import './index.scss';
 const Footer = () => {
   return (
     <div className="footer">
-      Footer
+      Contact: 000-000-0000
     </div>
   )
 }

@@ -2,11 +2,30 @@
   position: fixed;
   z-index: 100;
   background: white;
-  top: 0;
-  right: 0;
-  width: 220px;
-  height: 100%;
+  border-radius: 5px;
 
+  &--center{
+    max-width: 80%;
+    max-height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--right{
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+}
+
+@media(min-width: 768px){
+  .modal{
+    &--center{
+      height: 50%;
+      width: 50%;
+    }
+  }
 }
 
 .backdrop{
@@ -28,10 +47,11 @@
   // @include icon($icon-menu);
   display: inline-block;
   background: url('../../stylesheets/icons/close.svg') no-repeat;
-  background-size: 50px 50px;
-  width: 50px;
-  height: 50px;     
+  background-size: 24px;
+  width: 24px;
+  height: 24px;  
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
 }

@@ -10,18 +10,62 @@ const initialState = {
         imgSrc: './src/stylesheets/images/organicgroundnutoil.png',
         name: 'Organic Groundnut Oil',
         description: '',
-        pricePerQuantity: 'Rs 330.00 / Litre'
+        price: '330.00',
+        minQuantity: 3,
+        metrix: 'Litre'
       },
       {
         imgSrc: './src/stylesheets/images/organicgroundnutoil.png',
         name: 'Organic Sesame Oil',
         description: '',
-        pricePerQuantity: 'Rs 500.00 / Litre'
+        price: '500.00',
+        minQuantity: 1,
+        maxQuantity: 100,
+        metrix: 'Litre'
       }
     ],
-    bannerMessage: "We support Only Cash On Delivery and wil be coming soon with Online Payments. Apologize for any inconvenience."
+    bannerMessage: "We currently support Cash On Delivery Only. Will be coming soon with Online Payments. Apologize for any inconvenience.",
+    // orders: [
+    //   {
+    //     firstName: "Vinay Reddy",
+    //     lastName: "Kamreddy",
+    //     contact: "999999999",
+    //     email: "vinayreddy165@gmail.com",
+    //     addressLine1: "Bommakal",
+    //     addressLine2: "Bomm",
+    //     addressLine3: "Karimnagar, Telangana",
+    //     cart:[{
+    //       imgSrc: "./src/stylesheets/images/organicgroundnutoil.png",
+    //       name: "Organic Groundnut Oil",
+    //       description: "",
+    //       price: "330.00",
+    //       minQuantity: 3,
+    //       metrix: "Litre",
+    //       selectedPrice: 330
+    //     },
+    //     {
+    //       imgSrc: "./src/stylesheets/images/organicgroundnutoil.png",
+    //       name: "Organic Groundnut Oil",
+    //       description: "",
+    //       price: "330.00",
+    //       minQuantity: 3,
+    //       metrix: "Litre",
+    //       selectedPrice: 330
+    //     }]
+    //   }
+    // ]
   },
-  pageData: {}
+  appContext: {
+    // cart:[{
+    //   imgSrc: "./src/stylesheets/images/organicgroundnutoil.png",
+    //   name: "Organic Groundnut Oil",
+    //   description: "",
+    //   price: "330.00",
+    //   minQuantity: 3,
+    //   metrix: "Litre",
+    //   selectedPrice: 330
+    // }]
+  }
 };
 
 const getStore = () => {

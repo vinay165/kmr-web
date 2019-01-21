@@ -6,24 +6,30 @@ import { updateProducts } from '../../actions';
 import Button from '../Button';
 import "./index.scss";
 
-const ProductCreateCard = ({ actionLabel, actionBtnClass, products, onUpdatedProducts }) => {
+const ProductCreateCard = ({ imgSrc, actionLabel, actionBtnClass, products, onUpdatedProducts }) => {
   const [productName, setProductName] = useState('');
   const [productDescription, setProductDescription] = useState('');
   const [productPrice, setProductPrice] = useState('');
-  
+  const [productMetrix, setProductMetrix] = useState('');
+  const [productMinQuantity, setProductMinQuantity] = useState('');
+
   const handleProductAction = () => {
     const product = {
       imgSrc: '',
       name: productName,
       description: productDescription,
-      pricePerQuantity: productPrice
+      price: productPrice,
+      metrix: productMetrix,
+      quantity: productMinQuantity
     };
     const updatedProducts = [...products, product];
-    onUpdatedProducts({products: updatedProducts});
+    onUpdatedProducts(updatedProducts);
 
     setProductName('');
     setProductDescription('');
     setProductPrice('');
+    setProductMetrix('')
+    setProductMinQuantity('')
   }
 
   const handleImage = (e) => {
@@ -53,10 +59,19 @@ const ProductCreateCard = ({ actionLabel, actionBtnClass, products, onUpdatedPro
         onChange={(e) => setProductDescription(e.target.value)} />
       <input
         value={productPrice}
-        placeholder="Product Price Per Quantity..."
+        placeholder="Product Price Per Unit..."
         onChange={(e) => setProductPrice(e.target.value)} />
+      <input
+        value={productMetrix}
+        placeholder="Product Metrix..."
+        onChange={(e) => setProductMetrix(e.target.value)} />
+      <input
+        value={productMinQuantity}
+        placeholder="Product Min Quantity..."
+        onChange={(e) => setProductMinQuantity(e.target.value)} />
       <Button
         label={actionLabel}
+        isDisabled={productName === '' || productDescription === '' || productPrice === '' || productMetrix === '' || productMinQuantity === ''}
         customClass={actionBtnClass}
         handleClick={handleProductAction} />
     </div>

@@ -1,0 +1,13 @@
+.purchase-modal{
+  display: flex;
+  flex-direction: column;
+  padding: 45px 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 320px;
+  width: 320px;
+
+  &__cta{
+    width: 185px;
+  }
+}

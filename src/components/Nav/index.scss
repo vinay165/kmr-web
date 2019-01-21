@@ -20,5 +20,23 @@
     &-logout{
       padding: 0 10px;
     }
+
+    &-cart{
+      position: relative;
+    }
   }
+}
+
+.cart-tag{
+  background: lightseagreen;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
 }

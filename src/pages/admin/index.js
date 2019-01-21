@@ -7,9 +7,9 @@ import ProductCreateCard from '../../components/ProductCreateCard';
 import './index.scss';
 
 const Admin = ({products, onUpdatedProducts}) => {
-  const handleProductDelete = (product) => {
-    const filteredProducts = products.filter(item => item.name !== product);
-    onUpdatedProducts({ products: filteredProducts });
+  const handleProductDelete = (productName) => {
+    const filteredProducts = products.filter(item => item.name !== productName);
+    onUpdatedProducts(filteredProducts);
   }
 
   return (
