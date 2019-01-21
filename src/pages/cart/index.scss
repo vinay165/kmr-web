@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    max-width: 968px;
   }
 
   &-item{
@@ -43,12 +44,18 @@
     }                      
   }
 
+  &__total{
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__checkout-cta{
+    margin: 15px;
+  }
+
   &__empty{
     margin: 30px;
     font-size: 22px;
   }
 }
-
-// .header{  
-//   grid-area: header;
-// }

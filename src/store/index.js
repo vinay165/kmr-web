@@ -24,9 +24,48 @@ const initialState = {
         metrix: 'Litre'
       }
     ],
-    bannerMessage: "We currently support Cash On Delivery Only. Will be coming soon with Online Payments. Apologize for any inconvenience."
+    bannerMessage: "We currently support Cash On Delivery Only. Will be coming soon with Online Payments. Apologize for any inconvenience.",
+    // orders: [
+    //   {
+    //     firstName: "Vinay Reddy",
+    //     lastName: "Kamreddy",
+    //     contact: "999999999",
+    //     email: "vinayreddy165@gmail.com",
+    //     addressLine1: "Bommakal",
+    //     addressLine2: "",
+    //     addressLine3: "Karimnagar, Telangana",
+    //     cart:[{
+    //       imgSrc: "./src/stylesheets/images/organicgroundnutoil.png",
+    //       name: "Organic Groundnut Oil",
+    //       description: "",
+    //       price: "330.00",
+    //       minQuantity: 3,
+    //       metrix: "Litre",
+    //       selectedPrice: 330
+    //     },
+    //     {
+    //       imgSrc: "./src/stylesheets/images/organicgroundnutoil.png",
+    //       name: "Organic Groundnut Oil",
+    //       description: "",
+    //       price: "330.00",
+    //       minQuantity: 3,
+    //       metrix: "Litre",
+    //       selectedPrice: 330
+    //     }]
+    //   }
+    // ]
   },
-  appContext: {}
+  appContext: {
+    // cart:[{
+    //   imgSrc: "./src/stylesheets/images/organicgroundnutoil.png",
+    //   name: "Organic Groundnut Oil",
+    //   description: "",
+    //   price: "330.00",
+    //   minQuantity: 3,
+    //   metrix: "Litre",
+    //   selectedPrice: 330
+    // }]
+  }
 };
 
 const getStore = () => {

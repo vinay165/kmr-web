@@ -13,3 +13,10 @@ export const updateCart = (data) => {
     data: {'cart': data}
   }
 }
+
+export const updateOrder = (data) => {
+  return {
+    type: actionTypes.UPDATE_ORDER,
+    data: {'order': data}
+  }
+}

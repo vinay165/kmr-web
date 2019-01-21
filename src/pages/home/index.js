@@ -9,8 +9,13 @@ import './index.scss';
 const Home = ({ products, cart, addProductToCart }) => {
   const [isPurchaseModalOpen, openPurchaseModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
-  
+
   const handlePurchase = (product) => {
+    const isProductInCart = cart.filter(item => item.name === product.name)
+    if(isProductInCart.length){
+      alert('You have picked this product and available in your Cart. Select another Product.');
+      return;
+    }
     openPurchaseModal(true);
     setSelectedProduct(product);
   }

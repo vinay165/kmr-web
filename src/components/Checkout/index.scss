@@ -1,0 +1,80 @@
+.checkout{
+
+  &__heading{
+    padding: 15px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  &__goback-cta{
+    margin: 15px;
+  }
+
+  &__items{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    max-width: 968px;
+  }
+
+  &-item{
+    margin: 15px;
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    height: 80px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__total{
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.shipping-address{
+  padding: 15px;
+  
+  &__heading{
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &__subheading{
+    
+  }
+}
+
+.ship-form{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-gap: 5px;
+  margin-top: 18px;
+  width: 300px;
+
+  & > div{
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.confirmation{
+  margin: 30px;
+  font-size: 22px;
+
+  & > div{
+    margin-top: 20px;
+  }
+}
+
+.checkout-orders{
+  margin-top: 24px;
+
+  &__heading{
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
